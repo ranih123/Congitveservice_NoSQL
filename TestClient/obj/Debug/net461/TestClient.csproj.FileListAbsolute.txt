@@ -1,0 +1,14 @@
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\obj\Debug\net461\TestClient.csproj.CoreCompileInputs.cache
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\obj\Debug\net461\TestClient.AssemblyInfoInputs.cache
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\obj\Debug\net461\TestClient.AssemblyInfo.cs
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\bin\Debug\net461\TempData\TempData.json
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\bin\Debug\net461\TestClient.exe.config
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\bin\Debug\net461\TestClient.exe
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\bin\Debug\net461\TestClient.pdb
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\bin\Debug\net461\Newtonsoft.Json.dll
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\bin\Debug\net461\DataParsing.dll
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\bin\Debug\net461\DataParsing.pdb
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\obj\Debug\net461\TestClient.csprojAssemblyReference.cache
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\obj\Debug\net461\TestClient.csproj.CopyComplete
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\obj\Debug\net461\TestClient.exe
+C:\Users\chishah\source\repos\Congitveservice_NoSQL\TestClient\obj\Debug\net461\TestClient.pdb

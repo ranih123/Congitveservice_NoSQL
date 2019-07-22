@@ -17,10 +17,10 @@ namespace TestClient
             Console.WriteLine(response);
             Console.WriteLine("-------------------");
             Console.WriteLine("Deserialized Data:");
-            var deserialize = JsonConvert.DeserializeObject<List<Schema>>(response);
+            var deserialize = JsonConvert.DeserializeObject<Dictionary<string, HashSet<string>>>(response);
             foreach (var item in deserialize)
             {
-                Console.WriteLine(item.Entity+"-"+item.ColumnName +"-"+ item.ColumnValue);
+                Console.WriteLine(item.Key+"-"+item.Value.ToString());
             }
             Console.ReadLine();
         }
