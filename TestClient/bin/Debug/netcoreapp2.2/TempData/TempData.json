@@ -1,0 +1,32 @@
+{
+  "Employees": [
+    {
+      "id": "1",
+      "name": "Chintan",
+      "contact": "123-456-7890",
+      "Address": {
+        "city": "Redmond"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Nilepta",
+      "contact": "567-891-3456",
+      "Address": {
+        "city": "Seattle"
+      }
+    }
+  ],
+  "Salary": [
+    {
+      "id": "1",
+      "eId": "1",
+      "salary": "5000"
+    },
+    {
+      "id": "2",
+      "eId": "2",
+      "salary": "10000"
+    }
+  ]
+}

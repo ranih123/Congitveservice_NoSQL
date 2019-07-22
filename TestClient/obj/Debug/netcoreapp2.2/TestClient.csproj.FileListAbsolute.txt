@@ -1,0 +1,15 @@
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\bin\Debug\netcoreapp2.2\TempData\TempData.json
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\bin\Debug\netcoreapp2.2\TestClient.deps.json
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\bin\Debug\netcoreapp2.2\TestClient.runtimeconfig.json
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\bin\Debug\netcoreapp2.2\TestClient.runtimeconfig.dev.json
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\bin\Debug\netcoreapp2.2\TestClient.dll
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\bin\Debug\netcoreapp2.2\TestClient.pdb
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\bin\Debug\netcoreapp2.2\DataParsing.dll
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\bin\Debug\netcoreapp2.2\DataParsing.pdb
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\obj\Debug\netcoreapp2.2\TestClient.csprojAssemblyReference.cache
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\obj\Debug\netcoreapp2.2\TestClient.csproj.CoreCompileInputs.cache
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\obj\Debug\netcoreapp2.2\TestClient.AssemblyInfoInputs.cache
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\obj\Debug\netcoreapp2.2\TestClient.AssemblyInfo.cs
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\obj\Debug\netcoreapp2.2\TestClient.csproj.CopyComplete
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\obj\Debug\netcoreapp2.2\TestClient.dll
+C:\Users\chishah\source\repos\Hackathon2019\TestClient\obj\Debug\netcoreapp2.2\TestClient.pdb

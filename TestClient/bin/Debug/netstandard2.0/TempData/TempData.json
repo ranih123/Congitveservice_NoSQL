@@ -1,0 +1,42 @@
+{
+  "Employees":[
+    {
+      "id": "1",
+      "name": "Chintan",
+      "address": {
+        "city": "Redmond",
+        "zipcode": "98052"
+      },
+      "skills": [
+        "Java",
+        "C#",
+        "Azure"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Nilepta",
+      "address": {
+        "city": "Redmond",
+        "zipcode": "98053"
+      },
+      "skills": [
+        "Java",
+        "C#",
+        "Azure"
+      ]
+    }
+  ],
+  "Salary":[
+    {
+      "id": "1",
+      "eId": "1",
+      "salary": "5000"
+    },
+    {
+      "\"id”:”2”,": null,
+      "eId": "2",
+      "salary": "10000"
+    }
+  ]
+}
