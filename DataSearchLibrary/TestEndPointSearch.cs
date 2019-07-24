@@ -18,8 +18,13 @@ namespace DataSearchLibrary
             test.Add(result);
 
             IBuildQuery buildQuery = new BuildQuery();
-            buildQuery.BuildQueryJson(null, null, test);
-            //Console.WriteLine(result);
+            var res = buildQuery.BuildQueryJson(null, null, test);
+
+            foreach (var item in res)
+            {
+                Console.WriteLine(item);
+            }
+            
         }
     }
 }
