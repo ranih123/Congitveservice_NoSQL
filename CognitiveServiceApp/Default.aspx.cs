@@ -5,11 +5,9 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CognitiveServiceApp
 {
@@ -23,7 +21,7 @@ namespace CognitiveServiceApp
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
             // Call the NLP to get the model (Will get serialized JSON)
-            string NLPResult = "";
+            string NLPResult = GetNLPData("");
 
             string s = txtQuery.Text;
             // Call the search library to get the result
@@ -44,6 +42,16 @@ namespace CognitiveServiceApp
 
             resultGrid.DataSource = deserializeData;
             resultGrid.DataBind();
+        }
+
+        public static string GetNLPData(string url)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json")); ;
+                var response = httpClient.GetStringAsync(new Uri(url)).Result;
+                return response;
+            }
         }
     }
 }
