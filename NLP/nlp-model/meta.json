@@ -1,0 +1,1 @@
+{"pipeline":["ner"],"description":"","vectors":{"width":0,"vectors":0,"name":"spacy_pretrained_vectors","keys":0},"lang":"en","author":"","email":"","version":"0.0.0","url":"","spacy_version":">=2.1.6","name":"model","license":""}
