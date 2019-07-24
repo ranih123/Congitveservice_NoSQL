@@ -122,6 +122,22 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+/DataParsing/.vs/DataParsing
+/DataParsing/bin/Debug
+/DataParsing/obj
+/TestClient/bin/Debug/net461
+/DataSearchLibrary/bin/Debug/netstandard2.0
+/DataSearchLibrary/obj/Debug
+/DataSearchLibrary/obj
+/DataSearchLibrary/bin/Debug/net461
+/TestClient/obj/Debug/net461/TestClient.pdb
+/TestClient/obj/Debug/net461/TestClient.exe.config
+/TestClient/obj/Debug/net461/TestClient.exe
+/TestClient/obj/Debug/net461/TestClient.csprojAssemblyReference.cache
+/TestClient/obj/Debug/net461/TestClient.csproj.CoreCompileInputs.cache
+/TestClient/obj/Debug/net461/TestClient.csproj.CopyComplete
+/TestClient/obj/Debug/net461/TestClient.AssemblyInfoInputs.cache
+/TestClient/obj/Debug/net461/TestClient.AssemblyInfo.cs
 # Azure Functions artifacts
 bin
 obj
@@ -129,3 +145,7 @@ appsettings.json
 local.settings.json
 .python_packages
 Congitveservice_NoSQL.zip
+/DataParsing/.vs/DataParsing/v15/Server/sqlite3/storage.ide-wal
+/DataParsing/.vs/DataParsing/v15/Server/sqlite3/storage.ide-shm
+/DataParsing/.vs/DataParsing/v15/Server/sqlite3/storage.ide
+/DataParsing/.vs/DataParsing/v15/Server/sqlite3/db.lock

@@ -1,10 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\HttpTriggerForNER",
-    "\\NLP",
-    "\\NLP\\ner-model\\ner",
-    "\\TestClient"
+    ""
   ],
   "SelectedNode": "\\HttpTriggerForNER",
   "PreviewInSolutionExplorer": false
