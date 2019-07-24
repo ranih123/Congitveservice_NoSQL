@@ -20,13 +20,13 @@ namespace DataSearchLibrary
             var columnList = new List<ColumnInfo>();
             var queryType = "";
 
-            //tableSet.Add("Employees");
+            //tableSet.Add("Error");
             //tableSet.Add("Salaries");
 
-            //columnList.Add(new ColumnInfo("name", "Nilepta", "AND", "EQUALS"));
-            //columnList.Add(new ColumnInfo("salary", "12000", "","LT"));
-            //columnList.Add(new ColumnInfo("city", "seattle", "", "EQUALS"));
-            queryType = "Search";
+            //columnList.Add(new ColumnInfo("type", "authentication", "OR", "EQUALS"));
+            //columnList.Add(new ColumnInfo("type", "authorization", "AND", "EQUALS"));
+            //columnList.Add(new ColumnInfo("severity", "4", "", "LESSTHAN"));
+            // queryType = "Search";
 
             foreach (var item in queryParams)
             {
@@ -73,14 +73,14 @@ namespace DataSearchLibrary
 
                                     if (int.TryParse(col.ColumnValue, out int r))
                                     {
-                                        if (r.IsLessThan(Convert.ToInt32(((JValue)coldata).Value)))
+                                        if (Convert.ToInt32(((JValue)coldata).Value).IsLessThan(r))
                                         {
                                             bAdd = true;
                                         }
                                     }
                                     else if (DateTime.TryParse(col.ColumnValue, out DateTime n))
                                     {
-                                        if (n.DateIsLessThan(Convert.ToDateTime(((JValue)coldata).Value)))
+                                        if (Convert.ToDateTime(((JValue)coldata).Value).DateIsLessThan(n))
                                         {
                                             bAdd = true;
                                         }
@@ -89,14 +89,14 @@ namespace DataSearchLibrary
                                 case "GREATERTHAN":
                                     if (int.TryParse(col.ColumnValue, out int a))
                                     {
-                                        if (a.IsGreaterThan(Convert.ToInt32(((JValue)coldata).Value)))
+                                        if (Convert.ToInt32(((JValue)coldata).Value).IsGreaterThan(a))
                                         {
                                             bAdd = true;
                                         }
                                     }
                                     else if (DateTime.TryParse(col.ColumnValue, out DateTime n))
                                     {
-                                        if (n.DateIsGreaterThan(Convert.ToDateTime(((JValue)coldata).Value)))
+                                        if (Convert.ToDateTime(((JValue)coldata).Value).DateIsGreaterThan(n))
                                         {
                                             bAdd = true;
                                         }
@@ -105,14 +105,14 @@ namespace DataSearchLibrary
                                 case "LESSTHANEQUAL":
                                     if (int.TryParse(col.ColumnValue, out int b))
                                     {
-                                        if (b.IsLessThanEqual(Convert.ToInt32(((JValue)coldata).Value)))
+                                        if (Convert.ToInt32(((JValue)coldata).Value).IsLessThanEqual(b))
                                         {
                                             bAdd = true;
                                         }
                                     }
                                     else if (DateTime.TryParse(col.ColumnValue, out DateTime n))
                                     {
-                                        if (n.DateIsLessThanEqual(Convert.ToDateTime(((JValue)coldata).Value)))
+                                        if (Convert.ToDateTime(((JValue)coldata).Value).DateIsLessThanEqual(n))
                                         {
                                             bAdd = true;
                                         }
@@ -121,14 +121,14 @@ namespace DataSearchLibrary
                                 case "GREATERTHANEQUAL":
                                     if (int.TryParse(col.ColumnValue, out int c))
                                     {
-                                        if (c.IsGreaterThanEqual(Convert.ToInt32(((JValue)coldata).Value)))
+                                        if (Convert.ToInt32(((JValue)coldata).Value).IsGreaterThanEqual(c))
                                         {
                                             bAdd = true;
                                         }
                                     }
                                     else if (DateTime.TryParse(col.ColumnValue, out DateTime n))
                                     {
-                                        if (n.IsGreaterThanEqual(Convert.ToDateTime(((JValue)coldata).Value)))
+                                        if (Convert.ToDateTime(((JValue)coldata).Value).DateIsGreaterThanEqual(n))
                                         {
                                             bAdd = true;
                                         }

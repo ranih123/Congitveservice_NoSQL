@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataSearchLibrary.Helper
 {
-    class BlobConnectionHelper
+    public class BlobConnectionHelper
     {
         public static CloudBlobClient CreateBlobConneciton()
         {
