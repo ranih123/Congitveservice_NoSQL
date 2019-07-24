@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataParsing\DataParsing.csproj" />
+    <ProjectReference Include="..\DataSearchLibrary\DataSearchLibrary.csproj" />
   </ItemGroup>
 
 </Project>

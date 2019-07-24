@@ -6,3 +6,6 @@
 /DataParsing/bin/Debug
 /DataParsing/obj
 /TestClient/bin/Debug/net461
+/DataSearchLibrary/bin/Debug/netstandard2.0
+/DataSearchLibrary/obj/Debug
+/DataSearchLibrary/obj
