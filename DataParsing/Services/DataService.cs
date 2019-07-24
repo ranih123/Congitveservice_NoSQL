@@ -2,9 +2,7 @@
 using DataParsing.Models;
 using DataParsing.Repository;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace DataParsing.Services
 {
@@ -17,38 +15,104 @@ namespace DataParsing.Services
 
         public string ParseData(string data)
         {
+           var parseDic = new Dictionary<string, HashSet<string>>();
+
+            #region Commented
             List<Schema> schemaList = new List<Schema>();
 
             // Deserialize for level 0
-            var level0_Deserialize = JsonConvert.DeserializeObject<Dictionary<string, object>>(data);
-            foreach (var item in level0_Deserialize)
+            Parsing(data, parseDic, "","", 0);
+            
+
+            return JsonConvert.SerializeObject(parseDic);
+            #endregion
+        }
+
+        public void Parsing(string data, Dictionary<string, HashSet<string>> parseDic, string currentParent, string subParent, int level)
+        {
+            
+            if (data[0] != '{' && data[0] != '[')
             {
-                string entity = item.Key;
+                return;
+            }
+            else if (data[0] == '[' && data[data.Length -1] == ']')
+            {
+                 var level0_Deserialize_List = JsonConvert.DeserializeObject<List<object>>(data);
 
-                // Deserialize for level 1
-                var serializeJson = JsonConvert.SerializeObject(item.Value);
-                var level1_Deserialize = JsonConvert.DeserializeObject<List<object>>(serializeJson);
-
-                foreach (var obj in level1_Deserialize)
+                foreach (var listItem in level0_Deserialize_List)
                 {
-                    // Deserialize for level 2
-                    var level2_Deserialize = JsonConvert.DeserializeObject<Dictionary<string, object>>(obj.ToString());
-                    foreach (var prop in level2_Deserialize)
+                    var l1_deserialize = JsonConvert.DeserializeObject<Dictionary<string, object>>(listItem.ToString());
+                    foreach (var item in l1_deserialize)
                     {
-                        Schema schema = new Schema
+                        var key = item.Key;
+                        var value = item.Value;
+
+                        if (level == 0)
                         {
-                            Entity = entity,
-                            ColumnName = prop.Key,
-                            ColumnValue = Convert.ToString(prop.Value)
-                        };
-                        schemaList.Add(schema);
+                            currentParent = key;
+                            subParent += key;
+                        }
+                        else
+                        {
+                            subParent += "." + key;
+                        }
+                        if (!parseDic.ContainsKey(currentParent))
+                        {
+                            parseDic.Add(currentParent, new HashSet<string>());
+                        }
+                        else
+                        {
+                            key = subParent;
+                            parseDic[currentParent].Add(key);
+                        }
 
+                        level++;
+                        var valueSerialize = JsonConvert.SerializeObject(value);
+                        Parsing(valueSerialize, parseDic, currentParent, subParent, level);
+                        int lastDotIndex = subParent.LastIndexOf('.');
+                        if (lastDotIndex != -1)
+                            subParent = subParent.Substring(0, subParent.LastIndexOf('.'));
+                        level--;
                     }
-
                 }
             }
-          
-            return JsonConvert.SerializeObject(schemaList);
+            else
+            {
+                 var level0_Deserialize_Dic = JsonConvert.DeserializeObject<Dictionary<string, object>>(data);
+                foreach (var item in level0_Deserialize_Dic)
+                {
+                    var key = item.Key;
+                    var value = item.Value;
+                    
+                    if (level == 0)
+                    {
+                        currentParent = key;
+                        subParent += key;
+                    }
+                    else
+                    {
+                        subParent += "." + key;
+                    }
+                    if (!parseDic.ContainsKey(currentParent))
+                    {
+                        parseDic.Add(currentParent, new HashSet<string>());
+                    }
+                    else
+                    {
+                        key = subParent;
+                        parseDic[currentParent].Add(key);
+                    }
+
+                    level++;
+                    var valueSerialize = JsonConvert.SerializeObject(value);
+                    Parsing(valueSerialize, parseDic, currentParent, subParent, level);
+                    int lastDotIndex = subParent.LastIndexOf('.');
+                    if (lastDotIndex != -1)
+                        subParent = subParent.Substring(0, subParent.LastIndexOf('.'));
+                    level--;
+                }
+            } 
+            
         }
     }
 }

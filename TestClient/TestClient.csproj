@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DataParsing\DataParsing.csproj" />
+    <ProjectReference Include="..\DataSearchLibrary\DataSearchLibrary.csproj" />
   </ItemGroup>
 
 </Project>

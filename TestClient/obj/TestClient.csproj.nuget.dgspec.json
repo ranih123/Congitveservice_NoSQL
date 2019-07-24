@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\TestClient\\TestClient.csproj": {}
+    "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\TestClient\\TestClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\DataParsing\\DataParsing.csproj": {
+    "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\DataParsing\\DataParsing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\DataParsing\\DataParsing.csproj",
+        "projectUniqueName": "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\DataParsing\\DataParsing.csproj",
         "projectName": "DataParsing",
-        "projectPath": "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\DataParsing\\DataParsing.csproj",
+        "projectPath": "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\DataParsing\\DataParsing.csproj",
         "packagesPath": "C:\\Users\\chishah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\DataParsing\\obj\\",
+        "outputPath": "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\DataParsing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -44,23 +44,19 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
-            },
-            "QuickGraph": {
-              "target": "Package",
-              "version": "[3.6.61119.7, )"
             }
           }
         }
       }
     },
-    "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\TestClient\\TestClient.csproj": {
+    "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\TestClient\\TestClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\TestClient\\TestClient.csproj",
+        "projectUniqueName": "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\TestClient\\TestClient.csproj",
         "projectName": "TestClient",
-        "projectPath": "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\TestClient\\TestClient.csproj",
+        "projectPath": "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\TestClient\\TestClient.csproj",
         "packagesPath": "C:\\Users\\chishah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\TestClient\\obj\\",
+        "outputPath": "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\TestClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -70,17 +66,17 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "net461"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "net461": {
             "projectReferences": {
-              "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\DataParsing\\DataParsing.csproj": {
-                "projectPath": "C:\\Users\\chishah\\source\\repos\\Hackathon2019\\DataParsing\\DataParsing.csproj"
+              "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\DataParsing\\DataParsing.csproj": {
+                "projectPath": "C:\\Users\\chishah\\source\\repos\\Congitveservice_NoSQL\\DataParsing\\DataParsing.csproj"
               }
             }
           }
@@ -92,20 +88,11 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
-          "dependencies": {
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
+        "net461": {}
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
         }
       }
     }
