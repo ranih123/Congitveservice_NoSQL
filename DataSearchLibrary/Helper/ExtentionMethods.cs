@@ -43,4 +43,44 @@ namespace DataSearchLibrary.Helper
             }
         }
     }
+    public static class IntExtensions
+    {
+        public static bool IsGreaterThan(this int i, int value)
+        {
+            return i > value;
+        }
+        public static bool IsLessThan(this int i, int value)
+        {
+            return i < value;
+        }
+
+        public static bool IsGreaterThanEqual(this int i, int value)
+        {
+            return i >= value;
+        }
+        public static bool IsLessThanEqual(this int i, int value)
+        {
+            return i <= value;
+        }
+    }
+    public static class DateExtensions
+    {
+        public static bool DateIsGreaterThan(this DateTime i, DateTime value)
+        {
+            return i > value;
+        }
+        public static bool DateIsLessThan(this DateTime i, DateTime value)
+        {
+            return i < value;
+        }
+
+        public static bool DateIsGreaterThanEqual(this DateTime i, DateTime value)
+        {
+            return i >= value;
+        }
+        public static bool DateIsLessThanEqual(this DateTime i, DateTime value)
+        {
+            return i <= value;
+        }
+    }
 }
