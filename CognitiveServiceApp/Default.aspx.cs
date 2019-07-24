@@ -21,9 +21,9 @@ namespace CognitiveServiceApp
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
             // Call the NLP to get the model (Will get serialized JSON)
-            string NLPResult = GetNLPData("");
+            string url = "http://localhost:7071/api/HttpTriggerForNER/?sentence=" + txtQuery.Text;
+            string NLPResult = GetNLPData(url);
 
-            string s = txtQuery.Text;
             // Call the search library to get the result
             IBuildQuery buildQuery = new BuildQuery();
 

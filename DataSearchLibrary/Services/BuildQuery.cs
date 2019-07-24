@@ -14,7 +14,7 @@ namespace DataSearchLibrary
         public dynamic BuildQueryJson(string queryParamJson, string JsonSchema, List<string> inputJson)
         {
             // Parse queryParamJson to get the information
-            var queryParams = JsonConvert.DeserializeObject<Dictionary<string,string>>(queryParamJson);
+            var queryParams = JsonConvert.DeserializeObject<Dictionary<string,object>>(queryParamJson);
 
             var tableSet= new HashSet<string>();
             var columnList = new List<ColumnInfo>();
@@ -32,15 +32,15 @@ namespace DataSearchLibrary
             {
                 if (item.Key.Equals("TableNames"))
                 {
-                    tableSet = JsonConvert.DeserializeObject<HashSet<string>>(item.Value);
+                    tableSet = JsonConvert.DeserializeObject<HashSet<string>>(item.Value.ToString().ToUpper());
                 }
-                else if (item.Key.Equals("ColumnValue"))
+                else if (item.Key.Equals("Columns"))
                 {
-                    columnList = JsonConvert.DeserializeObject<List<ColumnInfo>>(item.Value);
+                    columnList = JsonConvert.DeserializeObject<List<ColumnInfo>>(item.Value.ToString().ToUpper());
                 }
                 else if (item.Key.Equals("QueryType"))
                 {
-                    queryType = JsonConvert.DeserializeObject<string>(item.Value);
+                    queryType = JsonConvert.DeserializeObject<string>(item.Value.ToString().ToUpper());
                 }
             }
 
@@ -52,24 +52,24 @@ namespace DataSearchLibrary
                 string previousOperator = "";
                 foreach (var col in columnList)
                 {
-                    foreach (var  coldata in input.FindTokens(col.ColumnName))
+                    foreach (var  coldata in input.FindTokens(col.ColumnName.ToLower()))
                     {
                         string parentData = coldata.Path.Substring(0, coldata.Path.IndexOf('.'));
                         var parent = parentData.Split('[');
                         string propertyName = parent[0].ToString();
                         bool bAdd = false;
                         int index = Convert.ToInt16(parent[1].ToString().Substring(0, 1));
-                        if (tableSet.Contains(propertyName))
+                        if (tableSet.Contains(propertyName.ToUpper()))
                         {
-                            switch(col.Comparator)
+                            switch(col.Comparator.ToUpper())
                             {
-                                case "EQUALS":
-                                    if (col.ColumnValue.ToLower().Equals(((JValue)coldata).Value.ToString().ToLower()))
+                                case "EQUAL TO":
+                                    if (col.ColumnValue.ToUpper().Equals(((JValue)coldata).Value.ToString().ToUpper()))
                                     {
                                         bAdd = true;
                                     }
                                     break;
-                                case "LESSTHAN":
+                                case "LESS THAN":
 
                                     if (int.TryParse(col.ColumnValue, out int r))
                                     {
@@ -86,7 +86,7 @@ namespace DataSearchLibrary
                                         }
                                     }
                                  break;
-                                case "GREATERTHAN":
+                                case "GREATER THAN":
                                     if (int.TryParse(col.ColumnValue, out int a))
                                     {
                                         if (Convert.ToInt32(((JValue)coldata).Value).IsGreaterThan(a))
@@ -102,7 +102,7 @@ namespace DataSearchLibrary
                                         }
                                     }
                                     break;
-                                case "LESSTHANEQUAL":
+                                case "LESS THAN EQUAL":
                                     if (int.TryParse(col.ColumnValue, out int b))
                                     {
                                         if (Convert.ToInt32(((JValue)coldata).Value).IsLessThanEqual(b))
@@ -118,7 +118,7 @@ namespace DataSearchLibrary
                                         }
                                     }
                                     break;
-                                case "GREATERTHANEQUAL":
+                                case "GREATER THAN EQUAL":
                                     if (int.TryParse(col.ColumnValue, out int c))
                                     {
                                         if (Convert.ToInt32(((JValue)coldata).Value).IsGreaterThanEqual(c))
@@ -143,12 +143,12 @@ namespace DataSearchLibrary
                             if (bAdd)
                             {
                                 //(previousOperator.Equals("AND") && results.Contains(input.GetValue(propertyName)[index].ToString())) || 
-                                if (!previousOperator.Equals("AND"))
+                                if (!previousOperator.ToUpper().Equals("AND"))
                                     results.Add(input.GetValue(propertyName)[index].ToString());
                             }
                             else
                             {
-                                if (previousOperator.Equals("AND"))
+                                if (previousOperator.ToUpper().Equals("AND"))
                                 {
                                     results.Remove(input.GetValue(propertyName)[index].ToString());
                                 }
