@@ -129,3 +129,7 @@ appsettings.json
 local.settings.json
 .python_packages
 Congitveservice_NoSQL.zip
+/DataParsing/.vs/DataParsing/v15/Server/sqlite3/storage.ide-wal
+/DataParsing/.vs/DataParsing/v15/Server/sqlite3/storage.ide-shm
+/DataParsing/.vs/DataParsing/v15/Server/sqlite3/storage.ide
+/DataParsing/.vs/DataParsing/v15/Server/sqlite3/db.lock
